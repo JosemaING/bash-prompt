@@ -1,5 +1,11 @@
 # .bashrc
 
+# Exit early for non-interactive shells (e.g., scp, rsync) to avoid errors.
+case $- in
+    *i*) ;;
+    *) return ;;
+esac
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
